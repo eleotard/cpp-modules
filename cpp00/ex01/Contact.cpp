@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:00:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/16 00:30:21 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:19:16 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ void	Contact::print_contact(int index)
 	std::cout << this->_nickname << "\t" << std::endl;
 }
 
+void	Contact::print_1_contact(int index)
+{
+	if (this->_first_name.empty())
+		return ;
+	std::cout << "index:\t\t" << index << std::endl;
+	std::cout << "first_name:\t" << this->_first_name << std::endl;
+	std::cout << "last_name:\t" << this->_last_name << std::endl;
+	std::cout << "nick_name:\t" << this->_nickname << std::endl;
+}
 
 
 //ask to enter values

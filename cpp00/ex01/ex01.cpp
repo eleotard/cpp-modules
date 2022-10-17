@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:50:18 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/16 00:25:32 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/17 21:08:30 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <string>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <climits>
+#include <cstdlib>
+#include <sstream>
 
 
 void	display_opening(void)
@@ -28,10 +31,13 @@ int main(void)
 {
 	PhoneBook	phoneb;
 	std::string	user_enter;
+	std::string index_s;
+	int			index;
 	
 	display_opening();
 	while (1)
 	{
+		index = 0;
 		std::cout << "> ";
 		std::getline(std::cin, user_enter);
 		if (std::cin.eof())
@@ -45,7 +51,17 @@ int main(void)
 			phoneb.display_add();
 		}
 		else if (user_enter.compare(std::string("SEARCH")) == 0)
+		{
 			phoneb.print_phonebook();
+			std::cout << "Please type the index of the contact you try to reach :" << std::endl;
+			std::getline(std::cin, index_s);
+			std::istringstream(index_s) >> index;
+			std::cout << index << std::endl;
+			if (index > 0 && index < 9)
+				phoneb.print_one_contact(index);
+			else
+				std::cout << "Wrong index" << std::endl;
+		}
 		else if (user_enter.compare(std::string("EXIT")) == 0)
 		{
 			std::cout << "Vous avez tape EXIT" << std::endl;
@@ -53,8 +69,8 @@ int main(void)
 		}
 		else
 			std::cout << "Invalid command : " << user_enter << std::endl;
+		//std::cin.ignore(INT_MAX, '\n');
 	}
-	
 	
 	/*au debut programme vide
 	cmd de lutilisateur qui permet de remplir le phonebook

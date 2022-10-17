@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:00:07 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/16 00:34:20 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:15:53 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,15 @@ void	PhoneBook::display_add()
 	if (first_name.empty() || last_name.empty() || nickname.empty() ||
 		phone_number.empty() || darkest_secret.empty())
 		return ;
-	_contact_tab[_contact_nb].fill(first_name, last_name, nickname,
-		phone_number, darkest_secret);
+	if (_contact_nb < 8)
+		_contact_tab[_contact_nb].fill(first_name, last_name, nickname,
+			phone_number, darkest_secret);
+	else
+	{
+		_contact_nb = 0;
+		_contact_tab[_contact_nb].fill(first_name, last_name, nickname,
+			phone_number, darkest_secret);
+	}
 	_contact_nb++;
 }
 
@@ -58,18 +65,16 @@ void	PhoneBook::print_phonebook()
 {
 	int i;
 
-	i = 0;
-	while (i < 8)
-	{
+	i = -1;
+	while (++i < 8)
 		_contact_tab[i].print_contact(i + 1);
-		i++;
-	}
-}
-//fonctions necessaires:
 
-//fonction qui cree le tableau de contacts
-//pouvoir afficher le tableau de contacts
-//
-//fonction qui prend un contact et le fout dans un tableau
-//
+}
+
+void	PhoneBook::print_one_contact(int index)
+{
+	_contact_tab[index - 1].print_1_contact(index);
+}
+
+
 
