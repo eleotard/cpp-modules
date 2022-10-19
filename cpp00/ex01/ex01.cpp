@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:50:18 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/17 21:08:30 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:04:12 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ void	display_opening(void)
 	std::cout << "  EXIT: exit PhoneBook" << std::endl;
 }
 
+int	secure_cin(std::string& s)
+{
+	std::getline(std::cin, s);
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		return (1);
+	}
+	return (0);
+}
+
 int main(void)
 {
 	PhoneBook	phoneb;
@@ -39,44 +50,26 @@ int main(void)
 	{
 		index = 0;
 		std::cout << "> ";
-		std::getline(std::cin, user_enter);
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (1);
-		}
+		if (secure_cin(user_enter))
+			break;
 		if (user_enter.compare(std::string("ADD")) == 0)
-		{
-			std::cout << "Vous avez tape ADD" << std::endl;
-			phoneb.display_add();
-		}
+			phoneb.ask_infos_add();
 		else if (user_enter.compare(std::string("SEARCH")) == 0)
 		{
 			phoneb.print_phonebook();
 			std::cout << "Please type the index of the contact you try to reach :" << std::endl;
-			std::getline(std::cin, index_s);
+			if (secure_cin(index_s))
+				break;
 			std::istringstream(index_s) >> index;
-			std::cout << index << std::endl;
 			if (index > 0 && index < 9)
 				phoneb.print_one_contact(index);
 			else
 				std::cout << "Wrong index" << std::endl;
 		}
 		else if (user_enter.compare(std::string("EXIT")) == 0)
-		{
-			std::cout << "Vous avez tape EXIT" << std::endl;
 			break ;
-		}
 		else
-			std::cout << "Invalid command : " << user_enter << std::endl;
-		//std::cin.ignore(INT_MAX, '\n');
+			std::cout << "Wrong command" << std::endl;
 	}
-	
-	/*au debut programme vide
-	cmd de lutilisateur qui permet de remplir le phonebook
-	ADD -> demande les infos
-	SEARCH -> affiche le contact demande
-	*/
-	
 	return (0);
 }

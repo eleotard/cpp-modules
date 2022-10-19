@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:59:55 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/17 16:14:19 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:37:29 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Contact {
 	public:
 		Contact(void);
 		~Contact(void);
-		void fill(std::string first_name, std::string last_name,
+		void	setContact(std::string first_name, std::string last_name,
 			std::string	nickname, std::string phone_number, std::string darkest_secret);
-		void	print_contact(int index);
-		void	print_1_contact(int index);
+		void	print_contact(int index) const;
+		void	print_1_contact(int index) const;
 	private :
 		std::string	_first_name;
 		std::string	_last_name;
