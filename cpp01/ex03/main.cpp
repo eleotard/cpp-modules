@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 20:30:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/22 20:14:11 by elsie            ###   ########.fr       */
+/*   Created: 2022/10/23 18:41:45 by elsie             #+#    #+#             */
+/*   Updated: 2022/10/23 18:49:40 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-Zombie  *newZombie( std::string name )
+int	main(void)
 {
-	Zombie		*z1;
-
-    z1 = new Zombie(name);
-    return (z1);
+	
+	return (0);
 }

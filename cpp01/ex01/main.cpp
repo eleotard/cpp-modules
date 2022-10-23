@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 20:30:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/22 20:14:11 by elsie            ###   ########.fr       */
+/*   Created: 2022/10/23 16:05:21 by elsie             #+#    #+#             */
+/*   Updated: 2022/10/23 17:31:24 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie  *newZombie( std::string name )
+int	main(void)
 {
-	Zombie		*z1;
-
-    z1 = new Zombie(name);
-    return (z1);
+	Zombie	*ptr;
+	
+	ptr = zombieHorde(50, "Zombie");
+	delete[] ptr;
+	return (0);
 }

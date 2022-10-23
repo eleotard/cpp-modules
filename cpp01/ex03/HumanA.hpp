@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 20:30:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/22 20:14:11 by elsie            ###   ########.fr       */
+/*   Created: 2022/10/23 18:41:36 by elsie             #+#    #+#             */
+/*   Updated: 2022/10/23 19:04:24 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie  *newZombie( std::string name )
+#ifndef HUMANA_H
+# define HUMANA_H
+
+class HumanA
 {
-	Zombie		*z1;
+	public:
+		HumanA(void);
+		~HumanA(void);
+		void	attack();
+	private:
+		std::string	nameA;
+		Weapon		WeaponA;
+};
 
-    z1 = new Zombie(name);
-    return (z1);
-}
+#endif

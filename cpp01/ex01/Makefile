@@ -5,33 +5,32 @@
 #                                                     +:+ +:+         +:+      #
 #    By: elsie <elsie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/19 20:21:12 by eleotard          #+#    #+#              #
-#    Updated: 2022/10/23 16:43:17 by elsie            ###   ########.fr        #
+#    Created: 2022/10/23 16:05:41 by elsie             #+#    #+#              #
+#    Updated: 2022/10/23 17:45:39 by elsie            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME =	ex01
 
 SRCS =	main.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
+		zombieHorde.cpp \
 		Zombie.cpp \
 
-OBJS = ${SRCS:%.cpp=%.o}
-
-CC = c++
+OBJS =	${SRCS:%.cpp=%.o}
 
 RM = rm -rf
 
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+FLAGS = -g -Wall -Wextra -std=c++98 -Werror
+
+CC = c++
 
 %.o: %.cpp
-	${CC} ${FLAGS} -c $^ -o $@
+	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} -o ${NAME} ${OBJS}
+	${CC} ${FLAGS} ${OBJS} -o ${NAME}
 
 clean:
 	${RM} ${OBJS}
@@ -41,7 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re all clean fclean
-
-
-	
+.PHONY: all clean fclean re
