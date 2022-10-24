@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:41:54 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/23 19:02:01 by elsie            ###   ########.fr       */
+/*   Updated: 2022/10/24 15:37:31 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
+Weapon::Weapon(std::string type) : _type(type)
+{
+	std::cout << "constructed weapon " << this->_type << std::endl;
+	return ;
+}
+
 Weapon::Weapon(void)
 {
-	std::cout << "constructed" << std::endl;
+	std::cout << "constructed weapon" << std::endl;
 	return ;
 }
 
 Weapon::~Weapon(void)
 {
-	std::cout << "destructed" << std::endl;
+	std::cout << "destructed weapon " << this->_type << std::endl;
 	return ;
 }
 
