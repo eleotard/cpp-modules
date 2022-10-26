@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:10:54 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/26 19:59:24 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/26 20:15:59 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class Harl
 {
-
 	public:
 		Harl(void);
 		~Harl(void);
