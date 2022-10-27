@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:41:40 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/24 16:27:33 by elsie            ###   ########.fr       */
+/*   Updated: 2022/10/27 15:04:53 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	HumanB::setWeapon(Weapon &weapon)
 
 void	HumanB::attack(void) const
 {
-	std::cout << this->_name << " attacks with their ";
-	std::cout << (*this->_Weapon).getType() << std::endl;
+	std::cout << this->_name << " attacks with ";
+	if (!this->_Weapon)
+		std::cout << "nothing more than his own bravery" << std::endl;
+	else
+		std::cout << "their " << (*this->_Weapon).getType() << std::endl;
 }

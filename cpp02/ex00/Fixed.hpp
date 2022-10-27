@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 16:06:16 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/27 14:48:18 by eleotard         ###   ########.fr       */
+/*   Created: 2022/10/26 20:25:01 by eleotard          #+#    #+#             */
+/*   Updated: 2022/10/26 20:25:04 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-Zombie*	zombieHorde(int N, std::string name)
+# include <iostream>
+# include <string>
+
+class Fixed
 {
-	Zombie	*ptr;
-	int		i;
-	std::string	num;
-	
-	i = 0;
-	ptr = new Zombie[N];
-	while (i < N)
-	{
-		std::stringstream 	ss;
-		ss << i;
-		ss >> num;
-		ptr[i].setName(name + " " + num);
-		i++;
-	}
-	return (&ptr[0]);
-}
+
+	public:
+
+		Fixed();
+		Fixed( Fixed const & src );
+		~Fixed();
+
+		Fixed &		operator=( Fixed const & rhs );
+
+	private:
+
+};
+
+std::ostream &			operator<<( std::ostream & o, Fixed const & i );
+
+#endif /* *********************************************************** FIXED_H */

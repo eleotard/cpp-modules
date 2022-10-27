@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/26 16:48:13 by eleotard          #+#    #+#              #
-#    Updated: 2022/10/26 20:24:24 by eleotard         ###   ########.fr        #
+#    Created: 2022/10/26 20:23:49 by eleotard          #+#    #+#              #
+#    Updated: 2022/10/26 20:24:45 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex05
+NAME = ex00
 
 SRCS =	main.cpp \
-		Harl.cpp
+		Fixed.cpp
 
 OBJS = ${SRCS:%.cpp=%.o}
 
@@ -40,6 +40,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: re all clean fclean
-
-
-	
