@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/26 20:25:11 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:04:03 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 Fixed::Fixed()
 {
+	this->_nbvirgfixe = 0;
 }
 
-Fixed::Fixed( const Fixed & src )
+
+Fixed::Fixed(const Fixed &src)
 {
 }
 

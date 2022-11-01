@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/26 20:25:04 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:03:37 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ class Fixed
 {
 
 	public:
-
 		Fixed();
-		Fixed( Fixed const & src );
+		Fixed(int nbvirgfixe);
+		Fixed(const Fixed &src);
 		~Fixed();
-
 		Fixed &		operator=( Fixed const & rhs );
+		int getRawBits( void ) const;
 
 	private:
+		int	_nbvirgfixe;
+		static const int _nbofbits = 8;
 
 };
 

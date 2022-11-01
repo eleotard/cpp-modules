@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:05:45 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/23 16:51:37 by elsie            ###   ########.fr       */
+/*   Updated: 2022/10/28 16:57:09 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::~Zombie(void)
 	return ;
 }
 
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ" << std::endl;
 }
