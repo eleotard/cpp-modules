@@ -6,64 +6,52 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/28 17:04:03 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:24:20 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
 Fixed::Fixed()
 {
-	this->_nbvirgfixe = 0;
+	setRawBits(0);
+	std::cout << "Default constructor called" << std::endl;
+	return ;
 }
 
+Fixed::Fixed(int fixcomanb) : _fixcomanb(fixcomanb)
+{
+	std::cout << "constructed with a parameter" << std::endl;
+	return ;
+}
 
 Fixed::Fixed(const Fixed &src)
 {
+	std::cout << "Copy constructor called" << std::endl;
+	this->operator=(src);
+	return ;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 Fixed::~Fixed()
 {
+	std::cout << "Destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-Fixed &				Fixed::operator=( Fixed const & rhs )
+int	Fixed::getRawBits(void) const
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_fixcomanb);
+}
+
+void	Fixed::setRawBits( int const raw )
+{
+	//std::cout << "setRawBits member function called" << std::endl;
+	this->_fixcomanb = raw;
+}
+
+Fixed &	Fixed::operator=( Fixed const & rhs )
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	setRawBits(rhs.getRawBits());
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Fixed const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

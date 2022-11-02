@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:01 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/28 17:03:37 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:15:12 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ class Fixed
 
 	public:
 		Fixed();
-		Fixed(int nbvirgfixe);
+		Fixed(int fixcomanb);
 		Fixed(const Fixed &src);
 		~Fixed();
-		Fixed &		operator=( Fixed const & rhs );
-		int getRawBits( void ) const;
+		Fixed &	operator=( Fixed const & rhs );
+		int 	getRawBits( void ) const;
+		void	setRawBits( int const raw );
 
 	private:
-		int	_nbvirgfixe;
+		int	_fixcomanb;
 		static const int _nbofbits = 8;
 
 };
