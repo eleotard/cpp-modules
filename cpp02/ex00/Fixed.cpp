@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/02 14:24:20 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:04:15 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(int fixcomanb) : _fixcomanb(fixcomanb)
 Fixed::Fixed(const Fixed &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->operator=(src);
+	*this = src;
 	return ;
 }
 
