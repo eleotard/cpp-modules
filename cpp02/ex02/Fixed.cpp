@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/07 19:59:44 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/07 21:28:26 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	setRawBits(0);
 	return ;
 }
 
 Fixed::Fixed(const Fixed &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
 Fixed::Fixed(const int nb) //convertit le int en virgule fixe
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	_fixed_point_nb = nb << _nbofbits_fracpart;
 }
 
@@ -40,7 +40,7 @@ Fixed::Fixed(const float fl) //convertit le float en virgule fixe
 	int		fract_part;
 	float	fract_part_fl;
 	
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	dec_part = (int)fl; 
 	fract_part_fl = fl - (float)dec_part;
 		//std::cout << "\tfrac part = " << fract_part_fl << std::endl;
@@ -55,7 +55,7 @@ Fixed::Fixed(const float fl) //convertit le float en virgule fixe
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 /*CONVERSION*/
@@ -99,9 +99,139 @@ void	Fixed::setRawBits( int const raw )
 
 Fixed &	Fixed::operator=( Fixed const & rhs )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	setRawBits(rhs.getRawBits());
 	return (*this);
+}
+
+
+/*OPERATIONS + - * / */
+
+Fixed	Fixed::operator+(Fixed const &rhs) const
+{	
+	return (Fixed(this->toFloat() + rhs.toFloat()));
+}
+
+Fixed	Fixed::operator-(Fixed const &rhs) const
+{
+	return (Fixed(this->toFloat() - rhs.toFloat()));
+}
+
+Fixed	Fixed::operator*(Fixed const &rhs) const
+{
+	return (Fixed(this->toFloat() * rhs.toFloat()));
+}
+
+Fixed	Fixed::operator/(Fixed const &rhs) const
+{
+	return (Fixed(this->toFloat() / rhs.toFloat()));
+}
+
+
+/*INCREMENTATIONS*/
+
+Fixed	&Fixed::operator++()
+{
+	setRawBits(this->getRawBits() + 1);
+	return (*this);
+}
+
+Fixed	&Fixed::operator--()
+{
+	setRawBits(this->getRawBits() - 1);
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) //post incr avec int factice
+{
+	Fixed	copy(*this);
+	operator++(); // prefix-increment this instance
+	return (copy);   // return la valeur avant incrementation
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	copy(*this);
+	operator--();
+	return (copy);
+}
+
+/*COMPARAISONS*/
+
+bool	Fixed::operator>(Fixed const &rhs) const
+{
+	if (this->getRawBits() > rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<(Fixed const &rhs) const
+{
+	if (this->getRawBits() < rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator>=(Fixed const &rhs) const
+{
+	if (this->getRawBits() > rhs.getRawBits())
+		return (true);
+	else if (this->getRawBits() == rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<=(Fixed const &rhs) const
+{
+	if (this->getRawBits() < rhs.getRawBits())
+		return (true);
+	else if (this->getRawBits() == rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator==(Fixed const &rhs) const
+{
+	if (getRawBits() == rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator!=(Fixed const &rhs) const
+{
+	if (getRawBits() != rhs.getRawBits())
+		return (true);
+	return (false);
+}
+
+/*MIN MAX*/
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed &data) //pourquoi on met pas Fixed:: ?
