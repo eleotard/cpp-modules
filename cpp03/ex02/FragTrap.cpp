@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:18:21 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/09 17:27:54 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:32:08 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ FragTrap::FragTrap() : ClapTrap()
 	return ;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	setName(name);
 	setHitPoints(100);
@@ -33,11 +33,16 @@ FragTrap::FragTrap(std::string name)
 	std::cout << "Constructed FragTrap " << _name << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &src)
+FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
 	*this = src;
 	_name = src.getName() + " copy";
 	std::cout << "Constructed FragTrap " << _name << std::endl;
+}
+
+FragTrap::~FragTrap()
+{
+	std::cout << "Destructed FragTrap" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &src)
@@ -47,4 +52,26 @@ FragTrap	&FragTrap::operator=(const FragTrap &src)
 	setEnergyPoints(src.getEnergyPoints());
 	setAttackDamage(src.getAttackDamage());
 	return (*this);
+}
+
+void	FragTrap::highFivesGuys(void)
+{
+	std::cout << "FragTrap " << _name << " says : Bro, lets do a High five ??????" << std::endl;
+}
+
+void	FragTrap::attack(const std::string &name)
+{
+	
+	if (_energy_points > 0 &&_hit_points > 0)
+	{
+		std::cout << "FragTrap " << _name << " attacks " << name <<
+			", causing " << _attack_damage << " points of damage!" << std::endl;
+		_energy_points--;
+		std::cout << "Energy points left : " << _energy_points << std::endl;
+		std::cout << std::endl;
+	}
+	else if (_energy_points == 0)
+		std::cout << "FragTrap " << _name << " has no energy left to attack." << std::endl;
+	else if (_hit_points == 0)
+		std::cout << "FragTrap " << _name << " can't attack bc he's dead." << std::endl;
 }

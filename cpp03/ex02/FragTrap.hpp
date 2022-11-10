@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:15:16 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/09 17:23:32 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:32:27 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FragTrap : public ClapTrap
 		FragTrap &operator=(const FragTrap &src);
 
 		void	highFivesGuys(void);
+		void	attack(const std::string &name);
 	private :
 	
 };

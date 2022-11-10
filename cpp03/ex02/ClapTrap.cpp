@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:53:40 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/08 21:36:34 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/10 19:28:53 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		this->_hit_points = _hit_points - amount;
 		std::cout << "ClapTrap " << _name << " takes " << amount <<
-			" points of damage!" " Number of lives remaining: " 
-				<< _hit_points << std::endl;
+			" points of damage!" << std::endl;
+		std::cout << "Life points left : " << _hit_points << std::endl;
 		std::cout << std::endl;
 	}
 	else
@@ -135,12 +135,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_hit_points = _hit_points + amount;
 		std::cout << "ClapTrap " << _name << " gained back " << amount <<
-			" points of life" << std::endl << "Number of lives remaining: "
-				<< _hit_points << std::endl;
-		std::cout << std::endl;
+			" points of life" << std::endl;
 		_energy_points--;
 		std::cout << "Life points left : " << _hit_points << std::endl;
-		std::cout << "Energy points left : " << _energy_points << std::endl;
+		std::cout << "Energy points left : " << _energy_points << std::endl << std::endl;
 	}
 	else if (_energy_points == 0)
 		std::cout << "ClapTrap " << _name << " has no more energy to be repaired." << std::endl;
