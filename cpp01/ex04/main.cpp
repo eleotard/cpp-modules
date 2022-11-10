@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:42:15 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/27 17:05:21 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:18:25 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	find_pos = 0;
 	while (std::getline(ifs, temp))
 	{
+		temp.append("\n");
 		find_pos = 0;
 		while (find_pos != -1)
 		{
@@ -46,7 +47,8 @@ int	main(int argc, char **argv)
 				temp.insert(find_pos, s2);
 			}
 		}
-		ofs << temp << std::endl;
+		ofs << temp;
+		// ofs << temp << std::endl;
 	}
 	ifs.close();
 	ofs.close();

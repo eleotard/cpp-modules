@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:41:40 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/27 15:04:53 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/09 15:32:31 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-HumanB::HumanB(std::string name) : _name(name)
+HumanB::HumanB(std::string name) : _name(name), _Weapon(0)
 {
 	std::cout << "constructed humanB " << this->_name << std::endl;
 	return ;
@@ -40,7 +40,7 @@ void	HumanB::setWeapon(Weapon &weapon)
 void	HumanB::attack(void) const
 {
 	std::cout << this->_name << " attacks with ";
-	if (!this->_Weapon)
+	if (this->_Weapon == 0)
 		std::cout << "nothing more than his own bravery" << std::endl;
 	else
 		std::cout << "their " << (*this->_Weapon).getType() << std::endl;

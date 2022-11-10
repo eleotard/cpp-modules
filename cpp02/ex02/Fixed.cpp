@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:25:08 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/07 21:28:26 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/10 18:17:59 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ Fixed	Fixed::operator*(Fixed const &rhs) const
 
 Fixed	Fixed::operator/(Fixed const &rhs) const
 {
+	if (rhs.getRawBits() == 0)
+		return (std::cout << "Division by 0 fobidden" << std::endl, Fixed(this->toFloat()));
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 

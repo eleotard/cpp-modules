@@ -3,35 +3,34 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
+#    By: elsie <elsie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/23 18:40:43 by elsie             #+#    #+#              #
-#    Updated: 2022/11/09 15:20:17 by eleotard         ###   ########.fr        #
+#    Created: 2022/10/26 20:23:49 by eleotard          #+#    #+#              #
+#    Updated: 2022/11/08 21:59:39 by elsie            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	ex03
+NAME = ScavTrap
 
 SRCS =	main.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
-		Weapon.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
 
-OBJS =	${SRCS:%.cpp=%.o}
-
-RM = rm -rf
-
-FLAGS = -g3 -Wall -Wextra -std=c++98 -Werror 
+OBJS = ${SRCS:%.cpp=%.o}
 
 CC = c++
 
+RM = rm -rf
+
+FLAGS = -g -Wall -Wextra -Werror -std=c++98
+
 %.o: %.cpp
-	${CC} ${FLAGS} -c $< -o $@
+	${CC} ${FLAGS} -c $^ -o $@
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
 clean:
 	${RM} ${OBJS}
@@ -41,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: re all clean fclean

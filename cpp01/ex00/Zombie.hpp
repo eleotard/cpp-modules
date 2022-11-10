@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:28:38 by eleotard          #+#    #+#             */
-/*   Updated: 2022/10/28 16:58:03 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:58:21 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Zombie
 {
 	public:
+		Zombie(void);
 		Zombie(std::string name);
-		//Zombie(void);
 		~Zombie(void);
 		void	announce(void) const;
 	private:

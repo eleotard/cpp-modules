@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 16:05:45 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/09 15:03:09 by eleotard         ###   ########.fr       */
+/*   Created: 2022/11/09 17:15:16 by eleotard          #+#    #+#             */
+/*   Updated: 2022/11/09 17:23:32 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-Zombie::Zombie(void)
-{
-	std::cout << "Construction" << std::endl;
-	return ;
-}
+#include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-Zombie::~Zombie(void)
+class FragTrap : public ClapTrap
 {
-	std::cout << "Destructed " << this->_name << std::endl;
-	return ;
-}
+	public :
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &src);
+		~FragTrap();
+		FragTrap &operator=(const FragTrap &src);
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+		void	highFivesGuys(void);
+	private :
+	
+};
 
-void	Zombie::setName(std::string name)
-{
-	this->_name = name;
-	announce();
-}
+#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:41:33 by elsie             #+#    #+#             */
-/*   Updated: 2022/10/24 16:57:09 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/09 16:21:57 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ HumanA::HumanA(std::string name, Weapon &weapon)
 	this->_Weapon = &weapon;
 	std::cout << "constructed humanA " << this->_name << std::endl;
 	return ;
-	
 }
 
 HumanA::HumanA(void)
