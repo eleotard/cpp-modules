@@ -6,11 +6,12 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:18:21 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/10 22:59:17 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/10 21:17:58 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap()
@@ -41,7 +42,7 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destructed FragTrap" << std::endl;
+	std::cout << "Destructor of FragTrap called" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &src)
