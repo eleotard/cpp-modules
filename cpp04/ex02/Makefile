@@ -6,16 +6,16 @@
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 23:37:20 by eleotard          #+#    #+#              #
-#    Updated: 2022/11/14 15:12:24 by eleotard         ###   ########.fr        #
+#    Updated: 2022/11/14 15:19:59 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	Brain
+NAME =	Abstract
 
 SRCS =	main.cpp \
 		Cat.cpp \
 		Dog.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Brain.cpp \
 
 OBJS =	${SRCS:%.cpp=%.o}
