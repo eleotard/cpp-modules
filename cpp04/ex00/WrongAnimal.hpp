@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:32:06 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/11 01:16:41 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:48:12 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		WrongAnimal &operator=(const WrongAnimal &src);
 		void				setType(const std::string &type);
 		std::string const	&getType() const;
-		virtual void	makeSound() const; // ft membre virtuelle appele une METHODE: resolution dynamique
+		void	makeSound() const;
 		
 	protected :
 		std::string	_type;

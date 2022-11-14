@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:28:48 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/11 01:28:46 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:44:14 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal
 		WrongCat(const WrongCat &src);
 		virtual ~WrongCat();
 		WrongCat &operator=(const WrongCat &src);
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 #endif
