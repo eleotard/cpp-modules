@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:58:38 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 16:28:08 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:31:08 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public AAnimal
 {
 	public :
 		Dog();
-		Dog(std::string name);
+		Dog(const std::string &name);
 		Dog(const Dog &src);
 		virtual ~Dog();
 		Dog &operator=(const Dog &src);

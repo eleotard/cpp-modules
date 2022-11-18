@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:37:15 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 16:28:50 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:43:43 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AAnimal
 {
 	public :
 		AAnimal();
-		AAnimal(std::string name);
+		AAnimal(const std::string &name);
 		AAnimal(const AAnimal &src);
 		virtual ~AAnimal();
 		AAnimal &operator=(const AAnimal &src);

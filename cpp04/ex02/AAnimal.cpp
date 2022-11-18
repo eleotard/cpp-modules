@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:37:12 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 16:30:13 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:32:47 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ AAnimal::AAnimal()
 	return ;
 }
 
-AAnimal::AAnimal(std::string type) : _type(type)
+AAnimal::AAnimal(const std::string &type) : _type(type)
 {
 	std::cout << "AAnimal of type " << _type << " constructor called" << std::endl;
 	return ;
@@ -27,6 +27,7 @@ AAnimal::AAnimal(std::string type) : _type(type)
 
 AAnimal::AAnimal(const AAnimal &copy)
 {
+	std::cout << "AAnimal copy constructor called" << std::endl;
 	*this = copy;
 	return;
 }

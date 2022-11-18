@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:37:15 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/11 01:10:24 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:41:13 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal
 {
 	public :
 		Animal();
-		Animal(std::string name);
+		Animal(const std::string &name);
 		Animal(const Animal &src);
 		virtual ~Animal();
 		Animal &operator=(const Animal &src);

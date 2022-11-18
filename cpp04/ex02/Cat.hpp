@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:01:19 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 16:27:52 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:43:48 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Cat : public AAnimal
 		Cat &operator=(const Cat &src);
 		virtual void				makeSound() const;
 	private:
-		std::string _type;
 		Brain *_cat_brain;
 };
 

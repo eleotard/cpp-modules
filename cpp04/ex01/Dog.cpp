@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:02:43 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 15:04:54 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:40:35 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Dog::Dog() : Animal()
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
+	_dog_brain = new Brain();
 	*this = copy;
 	return;
 }
@@ -37,7 +38,7 @@ Dog::~Dog()
 Dog	&Dog::operator=(const Dog &src)
 {
 	setType(src.getType());
-	_dog_brain = new Brain(*(src._dog_brain));
+	*_dog_brain = *src._dog_brain;
 	return (*this);
 }
 

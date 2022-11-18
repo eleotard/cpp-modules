@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:37:12 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/11 01:22:39 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:33:30 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Animal::Animal()
 	return ;
 }
 
-Animal::Animal(std::string type) : _type(type)
+Animal::Animal(const std::string &type) : _type(type)
 {
 	std::cout << "Animal of type " << _type << " constructor called" << std::endl;
 	return ;
@@ -27,6 +27,7 @@ Animal::Animal(std::string type) : _type(type)
 
 Animal::Animal(const Animal &copy)
 {
+	std::cout << "Animal copy destructor called" << std::endl;
 	*this = copy;
 	return;
 }

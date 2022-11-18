@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:02:34 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 15:04:26 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:39:44 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
+	std::cout << "Cat copy constructor called" << std::endl;
+	_cat_brain = new Brain();
 	*this = copy;
 	return;
 }
@@ -38,7 +40,7 @@ Cat::~Cat()
 Cat	&Cat::operator=(const Cat &src)
 {
 	setType(src.getType());
-	_cat_brain = new Brain(*(src._cat_brain));
+	*_cat_brain = *src._cat_brain;
 	return (*this);
 }
 
