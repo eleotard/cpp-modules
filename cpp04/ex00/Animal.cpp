@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:37:12 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/18 17:33:30 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/22 13:02:16 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::Animal(const std::string &type) : _type(type)
 
 Animal::Animal(const Animal &copy)
 {
-	std::cout << "Animal copy destructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 	*this = copy;
 	return;
 }

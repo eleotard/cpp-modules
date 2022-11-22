@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:32:18 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/14 16:46:32 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:01:11 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ WrongAnimal::WrongAnimal(std::string type) : _type(type)
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
 	*this = copy;
 	return;
 }

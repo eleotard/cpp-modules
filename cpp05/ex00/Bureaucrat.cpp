@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:35 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 00:15:41 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/22 13:20:07 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,12 @@ Bureaucrat::Bureaucrat() : _name("<unamed>"), _grade(150)
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 	std::cout << "Bureaucrat " << _name << " constructor called" << std::endl;
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-		_grade = grade;
-	}
-	catch(const Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << "\n";
-	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << "\n";
-	}
+
+	if (grade < 1)
+		throw GradeTooHighException(); //apelle le constructeur par defaut de la classe Grade..
+	else if (grade > 150)
+		throw GradeTooLowException();
+	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy._grade)
@@ -67,22 +57,11 @@ void	Bureaucrat::demote()
 
 void	Bureaucrat::setGrade(int grade)
 {
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-		_grade = grade;
-	}
-	catch(const Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << "\n";
-	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << "\n";
-	}
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	_grade = grade;
 }
 
 const std::string	Bureaucrat::getName() const
