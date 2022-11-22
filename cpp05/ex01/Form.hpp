@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:55:17 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 19:13:20 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/22 20:10:06 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@
 # define BUREAUCRAT_H
 class Bureaucrat
 {
-	class GradeTooHighException : public std::exception 
-	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade too high");
-			}
-	};
-
-	class GradeTooLowException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade too low");
-			}
-	};
-	
 	public:
+		class GradeTooHighException : public std::exception 
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Grade too high");
+				}
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Grade too low");
+				}
+		};
+		
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);

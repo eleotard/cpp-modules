@@ -6,7 +6,7 @@
 /*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:31 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 20:10:23 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/22 20:11:10 by elsie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Bureaucrat
 	public:
 		class GradeTooHighException : public std::exception 
 		{
-			public:
+		public:
 				virtual const char *what() const throw()
 				{
 					return ("Grade too high");
@@ -37,7 +37,7 @@ class Bureaucrat
 					return ("Grade too low");
 				}
 		};
-		
+	
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
