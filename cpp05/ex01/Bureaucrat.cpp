@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:35 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 14:18:56 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:25:32 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,18 @@ void	Bureaucrat::demote()
 
 void	Bureaucrat::setGrade(int grade)
 {
-	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	_grade = grade;
+	try
+	{
+		if (grade < 1)
+			throw Bureaucrat::GradeTooHighException();
+		else if (grade > 150)
+			throw Bureaucrat::GradeTooLowException();
+		_grade = grade;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << "\n";
+	}
 }
 
 const std::string	Bureaucrat::getName() const

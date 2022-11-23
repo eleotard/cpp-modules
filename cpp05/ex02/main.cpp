@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:05:27 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/23 19:06:24 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:32:56 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,17 @@ int main()
 	ShrubberyCreationForm	tree("garden");
 	RobotomyRequestForm		patient("Bob");
 	PresidentialPardonForm	letter("albert");
+	
+	std::cout << "\n" << "\033[0m";
 
 	std::cout << "Shrubbery tests: (l27)\033[31m" << std::endl; //145-137
 	John.signedForm(tree);
 	John.executeForm(tree);
 
 	John.setGrade(150);
+	John.executeForm(tree);
+	
+	John.setGrade(156); //throw erreur et reste a 150
 	John.executeForm(tree);
 
 	std::cout << std::endl << "\033[0mRobotomy tests: (l33)\033[32m" << std::endl; //72//45
@@ -45,7 +50,6 @@ int main()
 	John.executeForm(patient);
 
 	John.setGrade(2);
-	John.signedForm(patient);
 	John.executeForm(patient);
 
 	std::cout << std::endl << "\033[0mRobotomy tests: (l40)\033[33m" << std::endl; //25//5
