@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:35 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 19:16:42 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 18:55:20 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,19 @@ void	Bureaucrat::signedForm(Form &form)
 			<< "because of his " << e.what() << "\n";
 	}
 }
+
+void		Bureaucrat::executeForm(Form const& form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
 
 std::ostream &operator<<(std::ostream & os, Bureaucrat const& src)
 {

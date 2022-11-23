@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:05:46 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 20:41:54 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 18:18:41 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const& src);
 
-		void scf_duty(Bureaucrat const& B) const;
+		void execute(Bureaucrat const& B) const;
 	private:
 		std::string _target;
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:07:31 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 20:42:11 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 18:19:06 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public Form
 		~RobotomyRequestForm();
 		RobotomyRequestForm &operator=(RobotomyRequestForm const& src);
 
-		void	rrf_duty(Bureaucrat const& B) const;
+		void	execute(Bureaucrat const& B) const;
 	private:
 		std::string _target;
 };
