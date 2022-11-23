@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:54:56 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 19:11:22 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 14:39:36 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	Form::getSigned() const
 	return (_signed);
 }
 
-void		Form::beSigned(Bureaucrat const& bur)
+void		Form::beSigned(const Bureaucrat &bur)
 {
 	if (bur.getGrade() <= _grade_to_sign)
 		_signed = true;

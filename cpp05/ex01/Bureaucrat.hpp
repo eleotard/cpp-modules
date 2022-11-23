@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:31 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 20:10:23 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 14:02:00 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+
+class Form;
 
 class Bureaucrat
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsie <elsie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:23:35 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/22 19:16:42 by elsie            ###   ########.fr       */
+/*   Updated: 2022/11/23 14:18:56 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	Bureaucrat::signedForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << "Bureaucrat " << _name << " signed form" << form.getName() << "\n";
+		std::cout << "Bureaucrat " << _name << " signed form " << form.getName() << "\n";
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "Bureaucrat " << _name << " couldn't sign form" << form.getName() 
-			<< "because of his " << e.what() << "\n";
+		std::cout << "Bureaucrat " << _name << " couldn't sign form " << form.getName() 
+			<< " because of his " << e.what() << "\n";
 	}
 }
 
