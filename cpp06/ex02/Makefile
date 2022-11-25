@@ -5,22 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/21 21:22:18 by elsie             #+#    #+#              #
-#    Updated: 2022/11/25 19:37:26 by eleotard         ###   ########.fr        #
+#    Created: 2022/11/25 16:38:13 by eleotard          #+#    #+#              #
+#    Updated: 2022/11/25 23:17:58 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 
-SRCS =	Bureaucrat.cpp \
-		Form.cpp \
-		main.cpp \
+SRCS =	main.cpp \
+		Base.cpp 
 
 OBJS =	${SRCS:%.cpp=%.o}
 
 RM = rm -rf
 
-FLAGS = -g3 -std=c++98 -Wall -Wextra -Werror 
+FLAGS = -g3 -std=c++98 -Wall -Wextra #-Werror
 
 CC = c++
 

@@ -5,16 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/21 21:22:18 by elsie             #+#    #+#              #
-#    Updated: 2022/11/25 19:37:26 by eleotard         ###   ########.fr        #
+#    Created: 2022/11/25 16:38:13 by eleotard          #+#    #+#              #
+#    Updated: 2022/11/25 22:01:03 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = Serialisation
 
-SRCS =	Bureaucrat.cpp \
-		Form.cpp \
-		main.cpp \
+SRCS =	main.cpp \
+		Data.cpp 
 
 OBJS =	${SRCS:%.cpp=%.o}
 
