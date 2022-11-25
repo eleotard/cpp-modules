@@ -6,12 +6,13 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:07:28 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 18:47:59 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/26 00:00:45 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
+#include <unistd.h>
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) 
 	: Form("RobotomyRequestForm", 72, 45), _target(target)
@@ -32,13 +33,18 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void	RobotomyRequestForm::execute(Bureaucrat const& B) const
 {
+	static bool isinit = false;
+	
 	if (B.getGrade() > _grade_to_exe)
 		throw Form::GradeTooLowException();
 	if (_signed != 1)
 		throw Form::NotSigned();
 	
 	std::cout << "VVVVVVVvRRRRrrrvvvvvvvvvvzZZZZ" << std::endl;
-	srand((unsigned)time(0));
+	if (isinit == false) {
+		srand((unsigned)time(0) * getpid());
+		isinit = true;
+	}
 	if (rand() % 2)
 		std::cout << _target << " was robotomized successfuly" << std::endl;
 	else

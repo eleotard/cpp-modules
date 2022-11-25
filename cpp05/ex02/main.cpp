@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:05:27 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/23 19:32:56 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/26 00:00:26 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <ctime>
-
 	// std::cout << "\033[34m"; //bleu
 	//std::cout << "\033[32m"; //vert
 	// std::cout << "\033[35m"; //violet
