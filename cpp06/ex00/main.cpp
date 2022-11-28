@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:45:55 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/26 23:33:25 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:40:17 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ double	checker_str(std::string str)
 	check_errors(str);
 	std::stringstream ss(str); 
 	ss >> res;
-	std::cout << res << std::endl;
+	//std::cout << res << std::endl;
 	return (sign * res);
 	// att aux int overflow	
 }
@@ -108,7 +108,7 @@ void	recreate_type(double res)
 	std::cout << "float:\t" << std::fixed << std::showpoint;
     std::cout << std::setprecision(1) << tmp << 'f' << std::endl;
 	/*DOUBLE*/
-	std::cout << "double:\t" << res << std::setprecision(0) << std::endl;
+	std::cout << "double:\t" << res << std::endl;
 
 }
 
