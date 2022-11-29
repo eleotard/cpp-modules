@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:08:19 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 18:47:32 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:05:00 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& cop
 PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
+}
+
+std::string const& PresidentialPardonForm::getTarget() const
+{
+	return (this->_target);
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const& B) const

@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:07:28 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/26 00:00:45 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:34:28 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
+
+std::string const& RobotomyRequestForm::getTarget() const
+{
+	return (this->_target);
+}
+
 
 void	RobotomyRequestForm::execute(Bureaucrat const& B) const
 {

@@ -6,12 +6,13 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:05:27 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/26 00:00:26 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:29:13 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -22,41 +23,50 @@
 
 int main()
 {
-	Bureaucrat	John("John", 1);
-	ShrubberyCreationForm	tree("garden");
-	RobotomyRequestForm		patient("Bob");
-	PresidentialPardonForm	letter("albert");
+	std::cout << "\033[33m"; //jaune
+	Intern a;
+	Bureaucrat b("Albert", 137);
+
+	try
+	{
+		Form *form = a.makeForm("gfhfghfg", "Albert");
+		std::cout << "\n" << "\033[0m";
+		
+		std::cout << *form;
+		std::cout << "Target of the form: "<< form->getTarget() << std::endl;
+		std::cout << std::endl;
+		b.signedForm(*form);
+		std::cout << *form;
+		b.executeForm(*form);
+		
+		std::cout << "\033[33m" << "\n"; //jaune
+		delete form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "\033[35m" << e.what() << "\033[33m" << '\n' << '\n';
+	}
 	
-	std::cout << "\n" << "\033[0m";
+	std::cout << "\033[33m";
+	try
+	{
+		Form *form = a.makeForm("ShrubberyCreationForm", "Albert");
+		std::cout << "\n" << "\033[0m";
+		
+		std::cout << *form;
+		std::cout << "Target of the form: "<< form->getTarget() << std::endl;
+		std::cout << std::endl;
+		b.signedForm(*form);
+		std::cout << *form;
+		b.executeForm(*form);
+		
+		std::cout << "\033[33m" << "\n"; //jaune
+		delete form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "\033[35m" << e.what() << "\033[33m" << '\n';
+	}
 
-	std::cout << "Shrubbery tests: (l27)\033[31m" << std::endl; //145-137
-	John.signedForm(tree);
-	John.executeForm(tree);
-
-	John.setGrade(150);
-	John.executeForm(tree);
-	
-	John.setGrade(156); //throw erreur et reste a 150
-	John.executeForm(tree);
-
-	std::cout << std::endl << "\033[0mRobotomy tests: (l33)\033[32m" << std::endl; //72//45
-	John.setGrade(1);
-	John.executeForm(patient);
-
-	John.signedForm(patient);
-	John.setGrade(50);
-	John.executeForm(patient);
-
-	John.setGrade(2);
-	John.executeForm(patient);
-
-	std::cout << std::endl << "\033[0mRobotomy tests: (l40)\033[33m" << std::endl; //25//5
-	John.setGrade(4);
-	John.signedForm(letter);
-	John.executeForm(letter);
-	
-	John.setGrade(10);
-	John.executeForm(letter);
-	std::cout << "\n" << "\033[0m";
 	return (0);
 }

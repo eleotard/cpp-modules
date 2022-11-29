@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:05:44 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 18:59:59 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:34:13 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
+std::string const& ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
+}
 
 /*FORM JOB*/
 void ShrubberyCreationForm::execute(Bureaucrat const& B) const

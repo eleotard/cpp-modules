@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:37:18 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 14:47:16 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:38:43 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "\033[31m"  << e.what() << "\033[35m" << '\n';
 	}
 	std::cout << "\n";
 	std::cout << "\033[32m"; //vert
@@ -58,7 +58,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr  << "\033[31m" << e.what() << "\033[32m" << '\n';
 	}
 	
 

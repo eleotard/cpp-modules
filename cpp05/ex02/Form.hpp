@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:55:17 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 18:45:37 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:33:26 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ class Form
 		bool		getSigned() const;
 
 		void			beSigned(Bureaucrat const& bur);
+		virtual std::string const& getTarget() const = 0;
 		virtual void	execute(Bureaucrat const& B) const = 0;
 		
 	protected:

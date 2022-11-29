@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:35:37 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/28 17:46:43 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:51:12 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include <exception>
 
 Intern::Intern()
 {
@@ -24,8 +25,20 @@ Intern::Intern()
 
 Intern::Intern(Intern const& copy)
 {
+	(void)copy;
 	std::cout << "Constructed copy Intern" << std::endl;
 	return ;
+}
+
+Intern::~Intern()
+{
+	std::cout << "Destructed Intern" << std::endl;
+	return ;
+}
+
+Intern	&Intern::operator=(__attribute__((unused)) Intern const& src)
+{
+	return (*this);
 }
 
 Form	*Intern::makeForm(std::string form_name, std::string target)
@@ -34,21 +47,24 @@ Form	*Intern::makeForm(std::string form_name, std::string target)
 	int			i;
 	std::string forms[3] =
 	{"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
-	Form *tab_form =
-	{}
-	// Form		*(Intern::*f[])(std::string target) =
-	// {&Intern::getPresidentialPardonForm, &Intern::getRobotomyRequestForm, &Intern::getShrubberyCreationForm};
-	
+	Form *(Intern::*f[3])(std::string target) =
+	{&Intern::getPresidentialPardonForm, &Intern::getRobotomyRequestForm,
+	&Intern::getShrubberyCreationForm};
+
 	i = 0;
 	while (i < 3)
 	{
 		if (form_name == forms[i])
 		{
-			form = this->*f[i](target);
+			form = (this->*f[i])(target);
+			std::cout << "\033[0m" << "Intern creates " << form_name
+				<< "." << std::endl;
+			return (form);
 		}
 		i++;
 	}
-	
+	std::cerr << "\033[0m" << "Intern could not create the form : bad formular name." << std::endl;
+	throw std::exception();
 }
 
 Form *Intern::getPresidentialPardonForm(std::string target)

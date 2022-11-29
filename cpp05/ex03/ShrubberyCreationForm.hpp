@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:05:46 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/23 18:18:41 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:07:49 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& copy);
-		~ShrubberyCreationForm();
+		virtual ~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const& src);
-
+		virtual std::string const& getTarget() const;
 		void execute(Bureaucrat const& B) const;
 	private:
 		std::string _target;

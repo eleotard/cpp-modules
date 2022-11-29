@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:55:17 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/28 16:44:08 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:09:48 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Form
 		Form();
 		Form(const std::string &name, int grade_to_sign, int grade_to_exe);
 		Form(const Form &copy);
-		~Form();
+		virtual ~Form();
 		Form	&operator=(const Form &src);
 		/*ACCESSORS*/
 		const std::string	getName() const;
@@ -60,7 +60,8 @@ class Form
 		bool		getSigned() const;
 
 		void			beSigned(Bureaucrat const& bur);
-		//virtual void	execute(Bureaucrat const& B) const = 0;
+		virtual std::string const& getTarget() const = 0;
+		virtual void	execute(Bureaucrat const& B) const = 0;
 		
 	protected:
 		const std::string	_name;

@@ -6,7 +6,7 @@
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 21:22:18 by elsie             #+#    #+#              #
-#    Updated: 2022/11/28 15:35:12 by eleotard         ###   ########.fr        #
+#    Updated: 2022/11/29 18:10:32 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS =	Bureaucrat.cpp \
 		PresidentialPardonForm.cpp \
 		Form.cpp \
 		main.cpp \
+		Intern.cpp \
 
 OBJS =	${SRCS:%.cpp=%.o}
 
