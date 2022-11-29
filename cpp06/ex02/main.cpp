@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:39:16 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/25 23:43:09 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 22:10:28 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	identify(Base &p)
 	try
 	{
 		A &testa = dynamic_cast<A&>(p);
-		(void)testa;
+		(void)testa; //obligee de mettre ca car au cas ou cest NULL
+		//une reference ne peut jamais etre null
+		//donc on dit au compilateur de l'ignorer si cest le cas
 		std::cout << "reference ft: \tp is a class A" << std::endl;
 	}
 	catch(std::bad_cast &bc)

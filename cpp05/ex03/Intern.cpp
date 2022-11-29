@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:35:37 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/29 19:51:12 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:13:21 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ Form	*Intern::makeForm(std::string form_name, std::string target)
 		}
 		i++;
 	}
-	std::cerr << "\033[0m" << "Intern could not create the form : bad formular name." << std::endl;
-	throw std::exception();
+	throw BadNameException();
 }
 
 Form *Intern::getPresidentialPardonForm(std::string target)

@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:35:57 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/28 17:19:47 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:12:40 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 class Intern
 {
 	public:
+		class BadNameException : public std::exception
+		{
+			public:
+			virtual const char* what(void) const throw()
+			{
+				return("Intern could not create the form : bad formular name.");
+			}
+		};
+		
 		Intern();
 		Intern(Intern const& copy);
 		~Intern();

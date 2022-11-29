@@ -6,7 +6,7 @@
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 16:38:13 by eleotard          #+#    #+#              #
-#    Updated: 2022/11/25 23:17:58 by eleotard         ###   ########.fr        #
+#    Updated: 2022/11/29 22:07:54 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS =	${SRCS:%.cpp=%.o}
 
 RM = rm -rf
 
-FLAGS = -g3 -std=c++98 -Wall -Wextra #-Werror
+FLAGS = -g3 -std=c++98 -Wall -Wextra -Werror
 
 CC = c++
 

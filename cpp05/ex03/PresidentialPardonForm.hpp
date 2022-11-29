@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:08:16 by elsie             #+#    #+#             */
-/*   Updated: 2022/11/29 19:07:28 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:39:42 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class	PresidentialPardonForm : public Form
 {
 	public:
-		PresidentialPardonForm();
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(PresidentialPardonForm const& copy);
 		virtual ~PresidentialPardonForm();
@@ -28,6 +27,7 @@ class	PresidentialPardonForm : public Form
 		virtual std::string const& getTarget() const;
 		void	execute(Bureaucrat const& B) const;
 	private:
+		PresidentialPardonForm();
 		std::string _target;
 };
 
