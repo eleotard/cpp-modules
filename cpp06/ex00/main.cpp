@@ -6,12 +6,13 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:45:55 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/28 13:40:17 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:44:49 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <limits>
+#include <string>
 #include <locale>
 #include <sstream>
 #include <float.h>
@@ -54,10 +55,8 @@ void	check_errors(std::string &str)
 
 double	checker_str(std::string str)
 {
-	double	res;
 	double	sign;
 	
-	res = 0;
 	sign = 1;
 	if (str == "inf" || str == "inff"
 		|| str == "+inf" || str == "+inff")
@@ -77,11 +76,7 @@ double	checker_str(std::string str)
 	else if (str[0] == '+')
 		str = str.c_str() + 1;
 	check_errors(str);
-	std::stringstream ss(str); 
-	ss >> res;
-	//std::cout << res << std::endl;
-	return (sign * res);
-	// att aux int overflow	
+	return (sign * atof(str.c_str()));
 }
 
 void	recreate_type(double res)
@@ -90,13 +85,12 @@ void	recreate_type(double res)
 	if (isnan(res) || res > 127 || res < -128 || !isprint(res))
 		std::cout << "char:\tImpossible" << std::endl;
 	else
-		std::cout << "char:\t" << static_cast<char>(res) << std::endl;
+		std::cout << "char:\t" << "'" << static_cast<char>(res) << "'" << std::endl;
 		
-	
 	/*INT*/
 	if (res > static_cast<double>(INT_MAX)
 		|| res < static_cast<double>(INT_MIN))
-		std::cout << "int:\t Overflow" << std::endl;
+		std::cout << "int:\tOverflow" << std::endl;
 	else if (isnan(res) || res == std::numeric_limits<double>::infinity()
 		|| res == (std::numeric_limits<double>::infinity() * -1))
 		std::cout << "int:\tImpossible" <<std::endl;
@@ -106,10 +100,10 @@ void	recreate_type(double res)
 	/*FLOAT*/
 	float tmp = static_cast<float>(res); 
 	std::cout << "float:\t" << std::fixed << std::showpoint;
-    std::cout << std::setprecision(1) << tmp << 'f' << std::endl;
+    std::cout.precision(1);
+	std::cout << tmp << 'f' << std::endl;
 	/*DOUBLE*/
 	std::cout << "double:\t" << res << std::endl;
-
 }
 
 int main(int argc, char **argv)
