@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 21:26:47 by eleotard          #+#    #+#             */
-/*   Updated: 2022/11/25 22:13:27 by eleotard         ###   ########.fr       */
+/*   Created: 2022/12/01 16:13:05 by eleotard          #+#    #+#             */
+/*   Updated: 2022/12/01 18:57:31 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-#include <iostream>
-
-class Base
+template<typename T>
+T max(T const& a, T const& b)
 {
-	public:
-		virtual ~Base();
-	private:
-		std::string _str;
-};
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+template<typename T>
+T min(T const& a, T const& b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+template<typename T>
+void	swap(T a, T b)
+{
+	T c;
+
+	c = a;
+	a = b;
+	b = c;
+}
 
 #endif

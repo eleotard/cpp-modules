@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:45:55 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/01 15:44:49 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:59:46 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,10 @@ double	checker_str(std::string str)
 void	recreate_type(double res)
 {
 	/*CHAR*/
-	if (isnan(res) || res > 127 || res < -128 || !isprint(res))
+	if (isnan(res) || res > 127 || res < -128)
 		std::cout << "char:\tImpossible" << std::endl;
+	else if (!isprint(res))
+		std::cout << "char:\tNon printable" << std::endl;
 	else
 		std::cout << "char:\t" << "'" << static_cast<char>(res) << "'" << std::endl;
 		

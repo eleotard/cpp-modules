@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DATA_HPP
+# define DATA_HPP
+
 #include <iostream>
 
 class Data
 {
-	public :
+	public:
 		Data();
 		Data(Data const& src);
 		~Data();
@@ -24,3 +27,5 @@ class Data
 	private:
 		std::string _str;
 };
+
+#endif
