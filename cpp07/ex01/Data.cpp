@@ -6,13 +6,18 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 21:26:45 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/02 22:27:49 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:03:47 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
 Data::Data()
+{
+	return;
+}
+
+Data::Data(std::string const& str) : _str(str)
 {
 	return;
 }
@@ -41,4 +46,10 @@ void	Data::setStr(std::string const& str)
 const std::string &Data::getStr() const
 {
 	return (_str);
+}
+
+std::ostream &operator<<(std::ostream & os, Data const& src)
+{
+	os << src.getStr();
+	return(os);
 }

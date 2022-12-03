@@ -2,3 +2,8 @@ lorsqu'un objet est passé en paramètre par valeur à une fonction ou une méth
 il y a appel du constructeur par recopie pour générer l'objet utilisé en interne
 dans celle-ci. Ceci garantit que l'objet original ne peut être modifié ! 
 L'autre solution consiste à utiliser une référence constante ;
+
+Si ya d'autres constructeurs et pas le constructeur par default
+tu peux pas intancier par default
+Si tu specifies pas public ou prive apr default cest prive
+genre le constructeur

@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 16:13:05 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/02 16:45:33 by eleotard         ###   ########.fr       */
+/*   Created: 2022/11/25 21:26:47 by eleotard          #+#    #+#             */
+/*   Updated: 2022/12/02 22:20:53 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
 
-template<typename T>
-T max(T const& a, T const& b)
+#include <iostream>
+
+class Data
 {
-	if (a > b)
-		return (a);
-	return (b);
-}
+	public:
+		Data();
+		Data(std::string const& str);
+		Data(Data const& src);
+		~Data();
+		Data &operator=(Data const& src);
+		void	setStr(std::string const& str);
+		const std::string &getStr() const;
+	private:
+		std::string _str;
+};
 
-template<typename T>
-T min(T const& a, T const& b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
+std::ostream &operator<<(std::ostream  & os, Data const& src);
 
-template<typename T>
-void	swap(T &a, T &b)
-{
-	T c;
-
-	c = a;
-	a = b;
-	b = c;
-}
 
 #endif
