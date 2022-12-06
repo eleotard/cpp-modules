@@ -5,32 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:57:53 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/05 20:31:26 by eleotard         ###   ########.fr       */
+/*   Created: 2022/12/06 19:47:50 by eleotard          #+#    #+#             */
+/*   Updated: 2022/12/06 19:48:19 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <iostream>
-#include "whatever.hpp"
 
-//swap
-//min
-//max
-
-int main( void )
+int	main(void)
 {
-	int a = 2;
-	int b = 3;
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return 0;
+	
+	return (0);
 }
