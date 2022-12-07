@@ -7,3 +7,5 @@ Si ya d'autres constructeurs et pas le constructeur par default
 tu peux pas intancier par default
 Si tu specifies pas public ou prive apr default cest prive
 genre le constructeur
+
+Tous les conteners ont un squelette stack et une variable c correspondant a celui ci(STACK)

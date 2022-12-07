@@ -6,19 +6,20 @@
 #    By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 16:38:13 by eleotard          #+#    #+#              #
-#    Updated: 2022/12/06 19:41:58 by eleotard         ###   ########.fr        #
+#    Updated: 2022/12/07 18:23:30 by eleotard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Span
 
 SRCS =	main.cpp \
+		Span.cpp 
 
 OBJS =	${SRCS:%.cpp=%.o}
 
 RM = rm -rf
 
-FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 
@@ -38,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re #signifie que cest pas associe a des fichiers
