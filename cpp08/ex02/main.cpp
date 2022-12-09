@@ -6,11 +6,12 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:52:20 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/08 20:12:43 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:03:36 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
@@ -39,5 +40,33 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::cout << "------------------------" << std::endl;
+
+	std::list<int> a;
+	std::list<int> b;
+
+	b = a;
+	a.push_back(5);
+	a.push_back(17);
+	std::list<int>::iterator itte = --(a.end());
+	std::cout << *(itte++) << std::endl;
+	std::cout << std::endl;
+	a.pop_back(); //vire le dernier element 
+	std::cout << "stack size = " << a.size() << std::endl;
+	a.push_back(3);
+	a.push_back(5);
+	a.push_back(737);
+	//[...]
+	a.push_back(0);
+	std::list<int>::iterator itt = a.begin();
+	++itt;
+	--itt;
+	while (itt != itte)
+	{
+		std::cout << *itt << std::endl;
+		++itt;
+	}
+	std::list<int> m(a);
 	return 0;
 }

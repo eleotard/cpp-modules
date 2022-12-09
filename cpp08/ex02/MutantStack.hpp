@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 16:01:39 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/08 20:14:23 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/08 20:16:59 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ class MutantStack : public std::stack<T>
 	}
 	const_reverse_iterator crbegin() const
 	{
-		return (this->c.rbegin());
+		return (this->c.rbegin()); //va chercher celle qui est const
 	}
 	const_reverse_iterator crend() const
 	{

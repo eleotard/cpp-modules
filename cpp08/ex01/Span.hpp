@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:48:36 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/07 20:22:03 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:42:52 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Span
 		void	testSize() const;
 		void	printVect();
 		void	addNumber(int nb);
-		template <typename inputIt> //type used for input iteratorscd
+		template <typename inputIt> //type used for input iterators(read the values from a container)
 		void	addNumber(inputIt begin, inputIt end)
 		{
 			for (int i = 0; i != end - begin; i++) //donne la difference entre leurs index

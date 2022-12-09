@@ -6,7 +6,7 @@
 /*   By: eleotard <eleotard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:47:50 by eleotard          #+#    #+#             */
-/*   Updated: 2022/12/07 20:19:26 by eleotard         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:41:41 by eleotard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,7 +206,7 @@ int	main(void)
 	small_array();
 	std::cout << std::endl << "\033[00m"  << "BIG ARRAY:" << "\033[32m" << std::endl;
 	big_array();
-	std::cout << std::endl << "\033[00m"  << "BIG ARRAY WITH SPEC. FT:" << "\033[31m" << std::endl;
+	std::cout << std::endl << "\033[00m"  << "ARRAY WITH SPEC. FT:" << "\033[31m" << std::endl;
 	spec_array();
 	return (0);
 }
